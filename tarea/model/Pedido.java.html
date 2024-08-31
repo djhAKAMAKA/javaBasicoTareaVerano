@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Pedido.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Pedido.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">tarea</span><span class="s2">.</span><span class="s1">model</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">LocalDate</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Pedido </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String codigo</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">LocalDate fechaPedido</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String nombreCliente</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String producto</span><span class="s2">;</span>
+    <span class="s0">private int </span><span class="s1">unidades</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">precio</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s1">String codigo</span><span class="s2">, </span><span class="s1">LocalDate fechaPedido</span><span class="s2">, </span><span class="s1">String nombreCliente</span><span class="s2">, </span><span class="s1">String producto</span><span class="s2">, </span><span class="s0">int </span><span class="s1">unidades</span><span class="s2">, </span><span class="s0">double </span><span class="s1">precio</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">codigo </span><span class="s2">= </span><span class="s1">codigo</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">fechaPedido </span><span class="s2">= </span><span class="s1">fechaPedido</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombreCliente </span><span class="s2">= </span><span class="s1">nombreCliente</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">producto </span><span class="s2">= </span><span class="s1">producto</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">unidades </span><span class="s2">= </span><span class="s1">unidades</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">precio </span><span class="s2">= </span><span class="s1">precio</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Getters y Setters</span>
+    <span class="s0">public </span><span class="s1">String getCodigo</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">codigo</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setCodigo</span><span class="s2">(</span><span class="s1">String codigo</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">codigo </span><span class="s2">= </span><span class="s1">codigo</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">LocalDate getFechaPedido</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">fechaPedido</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setFechaPedido</span><span class="s2">(</span><span class="s1">LocalDate fechaPedido</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">fechaPedido </span><span class="s2">= </span><span class="s1">fechaPedido</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getNombreCliente</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">nombreCliente</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setNombreCliente</span><span class="s2">(</span><span class="s1">String nombreCliente</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombreCliente </span><span class="s2">= </span><span class="s1">nombreCliente</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getProducto</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">producto</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setProducto</span><span class="s2">(</span><span class="s1">String producto</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">producto </span><span class="s2">= </span><span class="s1">producto</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getUnidades</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">unidades</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setUnidades</span><span class="s2">(</span><span class="s0">int </span><span class="s1">unidades</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">unidades </span><span class="s2">= </span><span class="s1">unidades</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getPrecio</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">precio</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setPrecio</span><span class="s2">(</span><span class="s0">double </span><span class="s1">precio</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">precio </span><span class="s2">= </span><span class="s1">precio</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para calcular los días desde la fecha del pedido hasta hoy</span>
+    <span class="s0">public long </span><span class="s1">calcularDiasDesdePedido</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">now</span><span class="s2">().</span><span class="s1">toEpochDay</span><span class="s2">() - </span><span class="s0">this</span><span class="s2">.</span><span class="s1">fechaPedido</span><span class="s2">.</span><span class="s1">toEpochDay</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s4">&quot;Pedido{&quot; </span><span class="s2">+</span>
+                <span class="s4">&quot;codigo='&quot; </span><span class="s2">+ </span><span class="s1">codigo </span><span class="s2">+ </span><span class="s4">'</span><span class="s0">\'</span><span class="s4">' </span><span class="s2">+</span>
+                <span class="s4">&quot;, fechaPedido=&quot; </span><span class="s2">+ </span><span class="s1">fechaPedido </span><span class="s2">+</span>
+                <span class="s4">&quot;, nombreCliente='&quot; </span><span class="s2">+ </span><span class="s1">nombreCliente </span><span class="s2">+ </span><span class="s4">'</span><span class="s0">\'</span><span class="s4">' </span><span class="s2">+</span>
+                <span class="s4">&quot;, producto='&quot; </span><span class="s2">+ </span><span class="s1">producto </span><span class="s2">+ </span><span class="s4">'</span><span class="s0">\'</span><span class="s4">' </span><span class="s2">+</span>
+                <span class="s4">&quot;, unidades=&quot; </span><span class="s2">+ </span><span class="s1">unidades </span><span class="s2">+</span>
+                <span class="s4">&quot;, precio=&quot; </span><span class="s2">+ </span><span class="s1">precio </span><span class="s2">+</span>
+                <span class="s4">'}'</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

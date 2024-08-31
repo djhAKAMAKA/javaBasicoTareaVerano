@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>PedidoController.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PedidoController.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">tarea</span><span class="s2">.</span><span class="s1">controller</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">tarea</span><span class="s2">.</span><span class="s1">model</span><span class="s2">.</span><span class="s1">Pedido</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">LocalDate</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">PedidoController </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Pedido</span><span class="s2">&gt; </span><span class="s1">pedidos</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">PedidoController</span><span class="s2">() {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">pedidos </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s3">&quot;001&quot;</span><span class="s2">, </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2023</span><span class="s2">, </span><span class="s4">8</span><span class="s2">, </span><span class="s4">10</span><span class="s2">), </span><span class="s3">&quot;Juan Cuesta&quot;</span><span class="s2">, </span><span class="s3">&quot;Ordenador&quot;</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">1200.50</span><span class="s2">));</span>
+        <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s3">&quot;002&quot;</span><span class="s2">, </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2023</span><span class="s2">, </span><span class="s4">8</span><span class="s2">, </span><span class="s4">15</span><span class="s2">), </span><span class="s3">&quot;Luisma Garcia&quot;</span><span class="s2">, </span><span class="s3">&quot;Telefono&quot;</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">800.00</span><span class="s2">));</span>
+        <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s3">&quot;003&quot;</span><span class="s2">, </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2023</span><span class="s2">, </span><span class="s4">8</span><span class="s2">, </span><span class="s4">20</span><span class="s2">), </span><span class="s3">&quot;Antonio Recio&quot;</span><span class="s2">, </span><span class="s3">&quot;Tablet&quot;</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">200.50</span><span class="s2">));</span>
+        <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s3">&quot;004&quot;</span><span class="s2">, </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2023</span><span class="s2">, </span><span class="s4">8</span><span class="s2">, </span><span class="s4">22</span><span class="s2">), </span><span class="s3">&quot;Raquel Villanueva&quot;</span><span class="s2">, </span><span class="s3">&quot;Reloj&quot;</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">250.00</span><span class="s2">));</span>
+        <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s3">&quot;005&quot;</span><span class="s2">, </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2023</span><span class="s2">, </span><span class="s4">8</span><span class="s2">, </span><span class="s4">25</span><span class="s2">), </span><span class="s3">&quot;Macu Colmenero&quot;</span><span class="s2">, </span><span class="s3">&quot;Cámara&quot;</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">350.00</span><span class="s2">));</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">crearPedido</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese código del pedido: &quot;</span><span class="s2">);</span>
+        <span class="s1">String codigo </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese fecha del pedido (YYYY-MM-DD): &quot;</span><span class="s2">);</span>
+        <span class="s1">LocalDate fechaPedido </span><span class="s2">= </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">parse</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese nombre del cliente: &quot;</span><span class="s2">);</span>
+        <span class="s1">String nombreCliente </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese nombre del producto: &quot;</span><span class="s2">);</span>
+        <span class="s1">String producto </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese cantidad de unidades: &quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">unidades </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese precio del producto: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">precio </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+
+        <span class="s1">Pedido nuevoPedido </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Pedido</span><span class="s2">(</span><span class="s1">codigo</span><span class="s2">, </span><span class="s1">fechaPedido</span><span class="s2">, </span><span class="s1">nombreCliente</span><span class="s2">, </span><span class="s1">producto</span><span class="s2">, </span><span class="s1">unidades</span><span class="s2">, </span><span class="s1">precio</span><span class="s2">);</span>
+        <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">nuevoPedido</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Pedido creado con éxito: &quot; </span><span class="s2">+ </span><span class="s1">nuevoPedido</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">modificarPedido</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese el código del pedido a modificar: &quot;</span><span class="s2">);</span>
+        <span class="s1">String codigo </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">Pedido pedido </span><span class="s2">= </span><span class="s1">buscarPedidoPorCodigo</span><span class="s2">(</span><span class="s1">codigo</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">pedido </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese nueva fecha del pedido (YYYY-MM-DD): &quot;</span><span class="s2">);</span>
+            <span class="s1">LocalDate nuevaFecha </span><span class="s2">= </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">parse</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+            <span class="s1">pedido</span><span class="s2">.</span><span class="s1">setFechaPedido</span><span class="s2">(</span><span class="s1">nuevaFecha</span><span class="s2">);</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese nuevas unidades: &quot;</span><span class="s2">);</span>
+            <span class="s0">int </span><span class="s1">nuevasUnidades </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+            <span class="s1">pedido</span><span class="s2">.</span><span class="s1">setUnidades</span><span class="s2">(</span><span class="s1">nuevasUnidades</span><span class="s2">);</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Pedido modificado con éxito: &quot; </span><span class="s2">+ </span><span class="s1">pedido</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Pedido no encontrado.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">mostrarDiasDesdePedido</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese el código del pedido: &quot;</span><span class="s2">);</span>
+        <span class="s1">String codigo </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">Pedido pedido </span><span class="s2">= </span><span class="s1">buscarPedidoPorCodigo</span><span class="s2">(</span><span class="s1">codigo</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">pedido </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s0">long </span><span class="s1">dias </span><span class="s2">= </span><span class="s1">pedido</span><span class="s2">.</span><span class="s1">calcularDiasDesdePedido</span><span class="s2">();</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Días desde que se hizo el pedido: &quot; </span><span class="s2">+ </span><span class="s1">dias</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Pedido no encontrado.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">eliminarPedido</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Ingrese el código del pedido a eliminar: &quot;</span><span class="s2">);</span>
+        <span class="s1">String codigo </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">Pedido pedido </span><span class="s2">= </span><span class="s1">buscarPedidoPorCodigo</span><span class="s2">(</span><span class="s1">codigo</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">pedido </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">pedidos</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">pedido</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Pedido eliminado con éxito.&quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Pedido no encontrado.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private </span><span class="s1">Pedido buscarPedidoPorCodigo</span><span class="s2">(</span><span class="s1">String codigo</span><span class="s2">) {</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Pedido pedido </span><span class="s2">: </span><span class="s1">pedidos</span><span class="s2">) {</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">pedido</span><span class="s2">.</span><span class="s1">getCodigo</span><span class="s2">().</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">codigo</span><span class="s2">)) {</span>
+                <span class="s0">return </span><span class="s1">pedido</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s0">return null</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">listarPedidos</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">pedidos</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;No hay pedidos registrados.&quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s0">for </span><span class="s2">(</span><span class="s1">Pedido pedido </span><span class="s2">: </span><span class="s1">pedidos</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">pedido</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
